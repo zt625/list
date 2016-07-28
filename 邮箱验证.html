@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<style>
+		.green{
+			color:green;
+		}
+		.red{
+			color:red;
+		}
+	</style>
+</head>
+<body>
+	<label for="">输入您的QQ邮箱:</label>
+	<input type="text" class="txt">
+	<p class="info"></p>
+	<script src="script/jquery.js"></script>
+	<script>
+		var re=/^[0-9a-zA-Z\-]{5,10}\@qq\.com$/;
+		$(".txt").blur(function(){
+			var txt=$(".txt").val();
+			var result=re.test(txt);
+			var span=checkinput(result);
+			$(".info").html(span)
+		})
+		function checkinput(bool){
+			var rightSpan="<span class='green'>正确</span>"
+			var wrongSpan="<span class='red'>错误</span>"
+			if (bool) {
+				return rightSpan;
+			}else{
+				return wrongSpan;
+			}
+		}
+	</script>
+	
+</body>
+</html>

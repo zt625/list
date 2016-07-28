@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<style>
+		.green{
+			color:green;
+		}
+		.red{
+			color:red;
+		}
+	</style>
+</head>
+<body>
+	<label for="">输入手机号:</label>
+	<input type="text" class="txt">
+	<span class="span"></span>
+	<script src="script/jquery.js"></script>
+	<script>
+		var re=/^[0-9]{11}$/;
+		$(".txt").blur(function(){
+			var txt=$(".txt").val();
+			var result=re.test(txt);
+			if (result==true) {
+				$(".span").text("输入手机号").removeClass().addClass("green");
+			}else{
+				$(".span").text("请输入11位手机号").removeClass().addClass("red");
+			}
+
+
+			// if(result==false){
+			// 	$(".span").text("请输入11位手机号");
+			// }
+		})
+	</script>
+	
+</body>
+</html>

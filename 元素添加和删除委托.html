@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+</head>
+<body>
+	<input type="text" class="txt">
+	<input type="button" value="点击" class="btn">
+	<ul class="list">
+		<li>1 <span class="del">删除</span></li>
+		<li>2 <span class="del">删除</span></li>
+		<li>3 <span class="del">删除</span></li>
+		<li>4 <span class="del">删除</span></li>
+	</ul>
+	<script>
+		var txt=document.querySelector(".txt")
+		var btn=document.querySelector(".btn")
+		var list=document.querySelector(".list")
+
+		btn.addEventListener("click",function(){
+			var value=txt.value;
+			if (value !="") {
+				var str=document.createTextNode(value);
+				var li=document.createElement("li");
+				var span=document.createElement("span")
+				// var spanStr=document.createTextNode(" 删除")
+				span.innerHTML=" 删除"
+				span.className = "del";
+				// span.appendChild(spanStr)
+				li.appendChild(str);
+				li.appendChild(span)
+				list.appendChild(li);
+				txt.value="";
+			};
+			
+		})
+		list.addEventListener("click",function(event){
+			var target=event.target
+			if (target.className=="del") {
+				this.removeChild(target.parentNode)};
+			},false)
+	</script>
+</body>
+</html>

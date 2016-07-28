@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<style type="text/css">
+	</style>
+</head>
+<body>
+	<script>
+
+		var cat= {
+			name:"miaomiao",
+			age:2, 
+			sayName:function(){
+				alert(this.name);
+				return this;
+			},
+			sayHello:function(){
+				var content = "大家好，我是" + this.name + ",我今年" + this.age + "岁了.";
+				alert(content);
+				return this;
+			},
+			eat:function(food){
+				var content = "我喜欢吃" + food;
+				alert(content);
+				return this;
+			},
+			count:function(num1,num2,sign){
+				var result = 0;
+				switch(sign){
+					case "+" : result = Number(num1) + Number(num2); break;
+					case "-" : result = Number(num1) - Number(num2); break;
+					case "*" : result = Number(num1) * Number(num2); break;
+					case "/" : result = Number(num1) / Number(num2); break;
+				}
+				var content = num1 + sign +num2 + "计算的结果是" + result;
+				alert(content);
+			}
+		}
+		cat .sayName() .sayHello() .eat() .count();
+	</script>
+</body>
+</html>

@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<style>
+		.box1{
+			width: 100px;
+			height: 100px;
+		}
+		.box2{
+			background-color:red;
+		}
+	</style>
+</head>
+<body>
+	<div class="box1 box2 box3"></div>
+	<script>
+		var box=document.querySelector("div")
+		function removeClass(elem,str){
+			var newStr=elem.className.split(" ")
+			console.log(newStr)
+			var newArr = []
+			for (var i = 0; i < newStr.length; i++) {
+					if (newStr[i]!= str) {
+						newArr.push(newStr[i])
+					};
+			}
+			var newStr=newArr.join(" ")
+			elem.className=newStr
+		}
+		removeClass(box,"box2")
+	</script>
+</body>
+</html>

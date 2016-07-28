@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+</head>
+<body>
+	<script>
+		// [] 匹配范围
+		// +匹配一位或多位
+		// {} 匹配指定位数
+		// ^开始 $结束
+
+
+
+
+		// var re= /[0-9]+/;
+		// 匹配所有数字
+		// var re=/[0-9]{5}/
+		var re=/^[0-9]{5,10}$/;
+		// 匹配5-10数字
+		var str= "264111";
+		// var result=re.test(str);
+		var result=re.exec(str)
+		// 显示 匹配的内容 索引值 输入内容
+		console.log(result);
+	</script>
+</body>
+</html>

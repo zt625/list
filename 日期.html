@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+</head>
+<body>
+	<span>当前时间为：</span>
+	<span class="year"></span>
+	<span class="month"></span>
+	<span class="date"></span>
+	<span class="day"></span>
+	<span class="hour"></span>
+	<span class="minutes"></span>
+	<span class="seconds"></span>
+	<script src="script/jquery.js"></script>
+	<script>
+		var today= new Date();
+		var year=today.getFullYear();
+		var month=today.getMonth();
+		var date=today.getDate();
+		var day=today.getDay();
+		var hour=today.getHours();
+		var minutes=today.getMinutes();
+		var seconds=today.getSeconds();
+		$(".year").text(year);
+		$(".month").text(month+1);
+		$(".date").text(date);
+
+		$(".day").text(day);
+		$(".hour").text(hour);
+		$(".minutes").text(minutes);
+		$(".seconds").text(seconds);
+	</script>
+</body>
+</html>

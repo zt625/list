@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+</head>
+<body>
+	<script src="script/jquery.js"></script>
+	<script>
+		var strTime ="2016-7-20 12:10:30";
+		var timeTarge= new Date(strTime);
+		var target=timeTarge.getTime();
+		var timeNow=new Date();
+		var time=timeNow.getTime();
+		var result=target-time;
+		alert(result)
+	</script>
+</body>
+</html>

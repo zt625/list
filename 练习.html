@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<style>
+		.gre{
+			color: green;
+		}
+		.red{
+			color:red;
+		}
+	</style>
+</head>
+<body>
+	<label for="">手机号</label>
+	<input type="text" class="txt">
+	<p class="info"></p>
+	<script src="script/jquery.js"></script>
+	<script>
+		var re=/^[0-9]{11}$/
+		$(".txt").blur(function(){
+			var value=$(this).val();
+			var result=re.test(value);
+			var span=chickinput(result);
+			$(".info").html(span);
+		})
+		function chickinput(bool){
+			var rightSpan="<span class='gre'>正确</span>"
+			var wrongSpan="<span class='red'>错误</span>"
+			if (bool) {
+				return rightSpan;
+			}else{
+				return wrongSpan;
+			}
+		}
+	</script>
+</body>
+</html>

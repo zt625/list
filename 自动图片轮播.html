@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<style>
+		*{
+			margin: 0;
+			padding: 0;
+		}
+		.box{
+			width: 200px;
+			height: 200px;
+			overflow: hidden;
+		}
+		.box .pic-list{
+			width: 600px;
+			height: 200px;
+			list-style: none;
+		}
+		.box .pic-list li{
+			float: left;
+		}
+		.num-list li{
+			float: left;
+			list-style: none;
+			width: 20px;
+			height: 20px;
+			cursor: pointer;
+			border: 1px solid red;
+			text-align: center;
+			line-height: 20px;
+		}
+		.active{
+			background-color:red;
+		}
+	</style>
+</head>
+<body>
+	<div class="box">
+		<ul class="pic-list">
+			<li><img src="图片/1.jpg" alt=""></li>
+			<li><img src="图片/2.jpg" alt=""></li>
+			<li><img src="图片/3.jpg" alt=""></li>
+		</ul>
+	</div>
+		<ul class="num-list">
+			<li class="active">1</li>
+			<li>2</li>
+			<li>3</li>
+		</ul>
+	<script src="script/jquery.js"></script>
+	<script>
+		$(".num-list li").click(function(){
+			var index=$(this).index();
+			x=index;
+			var marleft = -200 * index;
+			$(".pic-list").animate({"margin-left":marleft},500)
+			$(this).addClass("active").siblings().removeClass("active")
+		})
+			var x=0;
+			function fun(){
+				
+				var marleft = -200 * x;
+				$(".pic-list").animate({"margin-left":marleft},500)
+				$(".num-list li").eq(x).addClass("active").siblings().removeClass("active")
+				x++;
+				// if (x==3){
+				// 	x= 0;
+				// };
+				x = x ==3 ? 0 : x;
+		}
+			setInterval(fun,1000)
+	</script>
+</body>
+</html>

@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+</head>
+<body>
+	<script src="script/jquery.js"></script>
+	<script>
+		var str="123a456b";
+		var re=/[a-z]/g;
+		// var newstr=str.replace(re,"-");
+		// .replace("","")  全局匹配
+		var newstr=str.split(re)
+		// .split()  以括号里的为分界将其他类型转换成数组
+		console.log(newstr)
+	</script>
+</body>
+</html>

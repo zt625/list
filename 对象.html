@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+</head>
+<body>
+	<script>
+		var cat={
+			name:"yushuang",
+			age:250,
+			sayName:function(){
+				alert(this.age)
+			},
+			one:function(){
+				var two ="你好" + this.name + "今年" + this.age
+				// this.name t
+				alert(two)
+			},
+			foot:function(fun){
+				var eat ="我喜欢吃" + fun;
+				alert(eat)
+			},
+			count:function(str1,str2,sign){
+				var result=0;
+				switch(sign){
+				case"+":result= Number(str1)+Number(str2);break;
+				case"-":result= Number(str1)-Number(str2);break;
+				case"*":result= Number(str1)*Number(str2);break;
+				case"/":result= Number(str1)/Number(str2);break;
+				}
+				var content= str1 + sign + str2 +"结果" + result;
+				alert(content);
+			}
+		}
+		cat.sayName();
+		// alert(yushuang.age)
+		// cat.one();
+		// cat.foot("fish");
+		// cat.count(5,4,"+");
+	</script>
+</body>
+</html>

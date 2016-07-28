@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+</head>
+<body>
+	<ul>
+		<li class="list">1</li>
+		<li class="list">2</li>
+		<li class="list">3</li>
+		<li class="list">4</li>
+	</ul>
+	<script>
+		var aList=document.getElementsByClassName("list");
+		// class值
+		// var aList=document.getElementsByClassName("li");
+		// 标签
+		for (var i = 0; i <aList.length; i++) {
+			aList[i].onclick=function(){
+				alert(1)
+			}
+		};
+	</script>
+</body>
+</html>

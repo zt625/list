@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<style>
+		*{
+			margin: 0;
+			padding: 0;
+		}
+		#list li{
+			float: left;
+			list-style: none;
+			border: 1px solid #00f;
+			width: 20px;
+			height: 20px;
+			line-height: 20px;
+			text-align: center;
+
+		}
+	</style>
+</head>
+<body>
+	<img  id="pic" src="图片/1.jpg" alt="">
+	<ul id="list">
+		<li>1</li>
+		<li>2</li>
+		<li>3</li>
+	</ul>
+	<script src="script/jquery.js"></script>
+	<script>
+		// alert("1")
+		$("#list li").click(function(){
+			var index = $(this).index();
+			// alert(index)
+			var src1="图片/";
+			var src2=index + 1;
+			var src3=".jpg";
+			var src =src1 + src2 +src3;
+			$("#pic").attr("src",src);
+			$(this).css("background-color","red").siblings().css("background-color","white");
+			
+		})
+
+
+	</script>
+</body>
+</html>

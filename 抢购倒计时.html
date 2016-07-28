@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<style>
+		.red{
+			background-color:red;
+		}
+	</style>
+</head>
+<body>
+	<div>
+		<span class="date"></span>日
+		<span class="hour"></span>:
+		<span class="minute"></span>:
+		<span class="second"></span>
+	</div>
+	<input type="button" class="btn" value="开始抢购">
+	<script src="script/jquery.js"></script>
+	<script>
+		
+			function setTime(){
+				var strTime ="2016-7-19 17:25:00";
+				var timeTarge= new Date(strTime);
+				var target=timeTarge.getTime();
+				var timeNow=new Date();
+				var time=timeNow.getTime();
+				var result=target-time;
+				var date=Math.floor(result / (24*60*60*1000));
+				var sehour=result % (24*60*60*1000);
+				var hour=Math.floor(sehour / (60*60*1000));
+				var semin=sehour % (60*60*1000);
+				var minute=Math.floor(semin / (60*1000));
+				var se=semin % (60*1000);
+				var second=Math.floor(se / 1000)
+				$(".date").text(date);
+				$(".hour").text(hour);
+				$(".minute").text(minute);
+				$(".second").text(second);
+				if (date==0 && hour==0 && minute==0 && second==0) {
+									$(".btn").addClass("red");
+									clearInterval(set);
+								};
+			}
+			setTime();
+			var set=setInterval(setTime,1000)
+			
+	</script>
+</body>
+</html>

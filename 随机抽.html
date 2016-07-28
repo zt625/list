@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+</head>
+<body>
+	<input type="button" value="点名" class="btn">
+	<script src="script/jquery.js"></script>
+	
+	<script>
+		var arr=[1,2,3,4,5];
+		var	obj={};
+		function fun(){
+			var num = Math.floor(Math.random() * arr.length);
+			var person=arr[num];
+			if (obj[person]===undefined) {
+						obj[person]=1;
+						console.log(person);
+					}else if(getLength(obj) < arr.length){
+						fun();
+					}
+		}
+		function getLength(o){
+			var n=0;
+			for(var i in o){
+				n++;
+			}
+				return i;
+		}
+		var btn=document.querySelector(".btn")	
+		btn.onclick=fun
+
+	
+	</script>
+	
+</body>
+</html>

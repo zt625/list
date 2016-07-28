@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<style type="text/css">
+		.num-list{
+			position: absolute;
+			top: 160px;
+			left:80px;
+		}
+		.num-list li{
+			list-style: none;
+			text-align: center;
+			width:20px;
+			height:20px;
+			border:1px solid #aaa;
+			line-height: 20px;
+			float: left;
+			cursor: pointer;
+			background-color: #fff;
+			
+
+		}
+		.pic{
+			position: relative;
+		}
+		.num-list .active{
+			background-color: red;
+		}
+	</style>
+</head>
+<body>
+	<img class="pic" src="图片/1.jpg" alt="">
+	<ul class="num-list">
+		<li>1</li>
+		<li class="list">2</li>
+		<li>3</li>
+	</ul>
+	<script>
+
+		// $("#num-list li").click(function(){
+		// 	var ind = $(this).index();
+		// 	var src = "images/" + ind + ".jpg";
+		// 	$("#pic").attr("src",src);
+		// 	$(this).addClass("active").siblings().removeClass("active");
+		// });
+		var picArr=["图片/1.jpg","图片/2.jpg","图片/3.jpg"]
+		var pic=document.querySelector(".pic")
+		var li=document.querySelectorAll("li");
+			for (var i = 0; i < li.length; i++) {
+						li[i].onclick=(function(i){
+							return function(){
+								pic.src=picArr[i]
+								addClass(this,"active");
+								var aSiblings=siblings(this)
+								for (var i = 0; i < aSiblings.length; i++) {
+									removeClass(aSiblings[i],"active"
+								};
+							}
+						})(i)
+					};
+		function addClass(elem,str){
+			if (elem.className){
+				var name=elem.className;
+				var newClass=name+" "+str;
+				elem.className=newClass;
+			}else{
+				elem.className=str;
+			}
+		}
+
+		function siblings(elem){
+			var ul=elem.parentNode;
+			var list=ul.children;
+			var list=elem.parentNode.children;
+			var newArr=[]
+			for (var i = 0; i < list.length; i++){
+				if (list[i] != elem) {
+					newArr.push(list[i]);
+				}; 
+			};
+			return newArr
+		}
+
+		function removeClass(elem,str){
+			var newStr=elem.className.split(" ")
+			var newArr = []
+			for (var i = 0; i < newStr.length; i++) {
+					if (newStr[i]!= str) {
+						newArr.push(newStr[i])
+					};
+			}
+			var newStr=newArr.join(" ")
+			elem.className=newStr
+		}
+	</script>
+</body>
+</html>

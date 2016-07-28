@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+</head>
+<body>
+	<form action="">
+		<input type="text" class="str1">
+		<input type="text" class="sign">
+		
+		<input type="text" class="str2">=
+		
+		<input type="text" class="result">
+		<input type="button" value="输出" class="num">
+	</form>
+	<script src="script/jquery.js"></script>
+	<script>
+		$(".num").click(function () {
+			var str1=$(".str1").val();
+			var str2=$(".str2").val();
+
+			var sign=$(".sign").val();
+			switch(sign){
+				case"+":var result= Number(str1)+Number(str2);break;
+				case"-":var result= Number(str1)-Number(str2);break;
+				case"*":var result= Number(str1)*Number(str2);break;
+				case"/":var result= Number(str1)/Number(str2);break;
+			}
+			// if (sign == "+"){
+			// 	var result= Number(str1)+Number(str2);
+			// };
+			// 	if (sign == "-"){
+			// 	var result= Number(str1)-Number(str2);
+			// };
+
+			// if (sign == "*"){
+			// 	var result= Number(str1)*Number(str2);
+			// } ;
+			// 	if (sign == "/"){
+			// 	var result= Number(str1)/Number(str2);
+			// };
+			$(".result").val(result);
+		})
+	</script>
+</body>
+</html>

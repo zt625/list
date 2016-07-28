@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+</head>
+<body>
+	<input type="button" value="添加" class="btn">
+	<ul class="list">
+		<li>西瓜</li>
+		<li>苹果</li>
+		<li>鸭梨</li>
+	</ul>
+	<script src="script/jquery.js"></script>
+	<script>
+	$(".btn").click(function(){
+		var name=prompt("请输入您添加的水果")
+
+		// var li="<li>"+name+"</li>";
+
+		// if(name != null && name != "")
+		// null=fasle
+		// ""=fasle
+		if (name) {
+			var li=$("<li></li>")
+		li.text(name)
+
+		$(".list").append(li);
+		};
+		
+	})
+	</script>
+</body>
+</html>

@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+</head>
+<body>
+	<form action="">
+		<input type="button" value="+" id="add">
+		<span id="num">0</span>
+		<input type="button" value="-" id="sub">
+	</form>
+	<script src="script/jquery.js"></script>
+	<script>
+		$("#add").click(function(){
+			var num=Number($("#num").text());				
+			// num=num+1;
+			// 
+
+			$("#num").text(++num);
+		});
+		$("#sub").click(function(){
+			var num=Number($("#num").text());
+			// num=num-1;
+			// --num
+			
+			if (num>0){
+				$("#num").text(--num);
+			};			
+		});
+	</script>
+</body>
+</html>
